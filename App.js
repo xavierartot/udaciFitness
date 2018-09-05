@@ -9,15 +9,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Slider
-          onValueChange={value => this.setState(() => ({
-            value,
-          }))}
-          value={this.state.value}
-        />
-        <Text style={styles.text}>
-          Value : { this.state.value }
-        </Text>
+        <AddEntry />
       </View>
     )
   }
@@ -29,10 +21,14 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginLeft: 10,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
   text: {
     color: '#000',
+  },
+  slider: {
+    backgroundColor: '#f00',
+    color: 'green',
   },
 })

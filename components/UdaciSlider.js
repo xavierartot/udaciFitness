@@ -1,14 +1,25 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { Slider, View, Text } from 'react-native'
 
 class UdaciSlider extends Component {
   render() {
-    const { value } = this.props
+    const {
+      onChange, value, max, unit, step,
+    } = this.props
     return (
-      <View>
-        <Text>
-        UdaciSlider
-        </Text>
+      <View style={{ flexDirection: 'column' }}>
+        <Slider
+          maximumValue={max}
+          minimumValue={0}
+          onValueChange={onChange}
+          step={step}
+          value={value}
+        />
+        <View>
+          <Text>{value}</Text>
+          <Text>{unit}</Text>
+        </View>
+
       </View>
     )
   }
