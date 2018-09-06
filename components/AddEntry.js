@@ -127,6 +127,7 @@ export default class AddEntry extends Component {
         })}
 
         <SubmitButton onPress={this.submit} />
+
       </View>
     )
   }

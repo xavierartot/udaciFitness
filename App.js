@@ -1,15 +1,13 @@
 import React from 'react'
-import { StyleSheet, View, Slider, Text } from 'react-native'
+import { StyleSheet, View, Text } from 'react-native'
 import AddEntry from './components/AddEntry'
+import Form from './formsTest/Form'
 
 export default class App extends React.Component {
-  state = {
-    value: 0,
-  }
   render() {
     return (
       <View style={styles.container}>
-        <AddEntry />
+        <Form />
       </View>
     )
   }
@@ -21,8 +19,6 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginLeft: 10,
     backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   text: {
     color: '#000',
