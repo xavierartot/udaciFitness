@@ -1,5 +1,9 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './reducers'
+
 import AddEntry from './components/AddEntry'
 // import Form from './formsTest/Form'
 // import Pics from './imagesTest/Pics'
@@ -7,11 +11,13 @@ import AddEntry from './components/AddEntry'
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        {/* <Form /> */}
-        {/*  <Pics /> */}
-        <AddEntry />
-      </View>
+      <Provider store={createStore(reducer)}>
+        <View style={styles.container}>
+          {/* <Form /> */}
+          {/*  <Pics /> */}
+          <AddEntry />
+        </View>
+      </Provider>
     )
   }
 }
