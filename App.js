@@ -1,19 +1,21 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 import AddEntry from './components/AddEntry'
-import Form from './formsTest/Form'
-import Pics from './imagesTest/Pics'
+// import Form from './formsTest/Form'
+// import Pics from './imagesTest/Pics'
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         {/* <Form /> */}
-        <Pics />
+        {/*  <Pics /> */}
+        <AddEntry />
       </View>
     )
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
