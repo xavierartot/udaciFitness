@@ -1,0 +1,80 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADD_ENTRY	actions/index.js	/^export const ADD_ENTRY = 'ADD_ENTRY'$/;"	n
+AddEntry	components/AddEntry.js	/^export default class AddEntry extends Component {$/;"	c
+App	App.js	/^export default class App extends React.Component {$/;"	c
+CALENDAR_STORAGE_KEY	utils/_calendar.js	/^export const CALENDAR_STORAGE_KEY = 'UdaciFitness:calendar'$/;"	n
+Change	components/AddEntry.js	/^              onChange={value => this.slide(key, value)}$/;"	c
+Change	formsTest/Form.js	/^            onChange={this.handleTextChange}$/;"	c
+Data	utils/_calendar.js	/^  let dummyData = {}$/;"	c
+DateHeader	components/DateHeader.js	/^export default function DateHeader({ date }) {$/;"	f
+Decrement	components/AddEntry.js	/^              onDecrement={() => this.decrement(key)}$/;"	c
+Features	.eslintrc.js	/^    ecmaFeatures: {$/;"	c
+Form	formsTest/Form.js	/^class Form extends Component {$/;"	c
+Increment	components/AddEntry.js	/^              onIncrement={() => this.increment(key)}$/;"	c
+Info	components/AddEntry.js	/^    const metaInfo = getMetricMetaInfo()$/;"	c
+Options	.eslintrc.js	/^  parserOptions: {$/;"	c
+Pics	imagesTest/Pics.js	/^class Pics extends Component {$/;"	c
+Press	components/AddEntry.js	/^          <TextButton onPress={this.reset}>$/;"	c
+Press	components/AddEntry.js	/^        <SubmitButton onPress={this.submit} \/>$/;"	c
+Press	components/AddEntry.js	/^    onPress={onPress}$/;"	c
+Press	components/TextButton.js	/^    <TouchableOpacity onPress={onPress}>$/;"	c
+Press	components/UdaciSteppers.js	/^        <TouchableOpacity onPress={onDecrement}>$/;"	c
+Press	components/UdaciSteppers.js	/^        <TouchableOpacity onPress={onIncrement}>$/;"	c
+RECEIVE_ENTRIES	actions/index.js	/^export const RECEIVE_ENTRIES = 'RECEIVE_ENTRIES'$/;"	n
+SubmitButton	components/AddEntry.js	/^const SubmitButton = ({ onPress }) => ($/;"	c
+TextButton	components/TextButton.js	/^export default function TextButton({ children, onPress }) {$/;"	f
+TextChange	formsTest/Form.js	/^  handleTextChange = (input) => {$/;"	c
+Time	utils/_calendar.js	/^    const strTime = timeToString(time)$/;"	c
+ToggleSwitch	formsTest/Form.js	/^  handleToggleSwitch = () => {$/;"	c
+UdaciSlider	components/UdaciSlider.js	/^class UdaciSlider extends Component {$/;"	c
+Value	components/UdaciSlider.js	/^          maximumValue={max}$/;"	c
+Value	components/UdaciSlider.js	/^          minimumValue={0}$/;"	c
+ValueChange	components/UdaciSlider.js	/^          onValueChange={onChange}$/;"	c
+ValueChange	formsTest/Form.js	/^          onValueChange={this.handleToggleSwitch}$/;"	c
+addEntry	actions/index.js	/^export function addEntry(entry) {$/;"	f
+bike	utils/helpers.js	/^    bike: {$/;"	o
+calculateDirection	utils/helpers.js	/^export function calculateDirection(heading) {$/;"	f
+container	App.js	/^  container: {$/;"	o
+container	formsTest/Form.js	/^  container: {$/;"	o
+container	imagesTest/Pics.js	/^  container: {$/;"	o
+eat	utils/helpers.js	/^    eat: {$/;"	o
+ecmaFeatures	.eslintrc.js	/^    ecmaFeatures: {$/;"	o
+entries	reducers/index.js	/^function entries(state = {}, action) {$/;"	f
+exports	.eslintrc.js	/^module.exports = {$/;"	o
+for	utils/_calendar.js	/^  for (let i = -183; i < 0; i++) {$/;"	f
+formatCalendarResults	utils/_calendar.js	/^export function formatCalendarResults (results) {$/;"	f
+getIcon	utils/helpers.js	/^      getIcon() {$/;"	f
+getMetricMetaInfo	utils/helpers.js	/^export function getMetricMetaInfo(metric) { \/\/ metric === run, bike, swim...$/;"	f
+getRandomNumber	utils/_calendar.js	/^function getRandomNumber (max) {$/;"	f
+if	components/AddEntry.js	/^    if (this.props.alreadyLogged) {$/;"	f
+if	utils/_calendar.js	/^    if (typeof dates[strTime] === 'undefined') {$/;"	f
+if	utils/helpers.js	/^  if (num >= x && num <= y) {$/;"	f
+img	formsTest/Form.js	/^  img: {$/;"	o
+img	imagesTest/Pics.js	/^  img: {$/;"	o
+input	formsTest/Form.js	/^  input: {$/;"	o
+isBetween	utils/helpers.js	/^export function isBetween(num, x, y) {$/;"	f
+parserOptions	.eslintrc.js	/^  parserOptions: {$/;"	o
+receiveEntries	actions/index.js	/^export function receiveEntries(entries) {$/;"	f
+removeEntry	utils/api.js	/^export function removeEntry(key) {$/;"	f
+render	App.js	/^  render() {$/;"	f
+render	components/AddEntry.js	/^  render() {$/;"	f
+render	components/UdaciSlider.js	/^  render() {$/;"	f
+render	formsTest/Form.js	/^  render() {$/;"	f
+render	imagesTest/Pics.js	/^  render() {$/;"	f
+rules	.eslintrc.js	/^  rules: {$/;"	o
+run	utils/helpers.js	/^    run: {$/;"	o
+setDummyData	utils/_calendar.js	/^function setDummyData () {$/;"	f
+setMissingDates	utils/_calendar.js	/^function setMissingDates (dates) {$/;"	f
+sleep	utils/helpers.js	/^    sleep: {$/;"	o
+slider	App.js	/^  slider: {$/;"	o
+slider	formsTest/Form.js	/^  slider: {$/;"	o
+submitEntry	utils/api.js	/^export function submitEntry({ entry, key }) {$/;"	f
+swim	utils/helpers.js	/^    swim: {$/;"	o
+switch	reducers/index.js	/^  switch (action.type) {$/;"	f
+text	App.js	/^  text: {$/;"	o
+text	formsTest/Form.js	/^  text: {$/;"	o

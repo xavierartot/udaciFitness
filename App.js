@@ -13,8 +13,6 @@ export default class App extends React.Component {
     return (
       <Provider store={createStore(reducer)}>
         <View style={styles.container}>
-          {/* <Form /> */}
-          {/*  <Pics /> */}
           <AddEntry />
         </View>
       </Provider>
@@ -26,15 +24,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginRight: 10,
-    marginLeft: 10,
-    backgroundColor: '#fff',
-  },
-  text: {
-    color: '#000',
-  },
-  slider: {
-    backgroundColor: '#f00',
-    color: 'green',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 })
