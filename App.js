@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import reducer from './reducers'
 
 import AddEntry from './components/AddEntry'
+import History from './components/History'
 // import Form from './formsTest/Form'
 // import Pics from './imagesTest/Pics'
 
@@ -13,7 +14,7 @@ export default class App extends React.Component {
     return (
       <Provider store={createStore(reducer)}>
         <View style={styles.container}>
-          <AddEntry />
+          <History />
         </View>
       </Provider>
     )

@@ -148,7 +148,6 @@ export function getMetricMetaInfo(metric) { // metric === run, bike, swim...
       },
     },
   }
-
   return typeof metric === 'undefined'
     ? info
     : info[metric]
