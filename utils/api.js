@@ -6,11 +6,12 @@ export function fetchCalendarResults() {
     .then(formatCalendarResults)
 }
 
-export function submitEntry({ entry, key }) {
+export function submitEntry({ entry, key }) { // add entry
   return AsyncStorage.mergeItem(CALENDAR_STORAGE_KEY, JSON.stringify({
     [key]: entry,
   }))
 }
+
 export function removeEntry(key) {
   return AsyncStorage.getItem(CALENDAR_STORAGE_KEY)
     .then((results) => {
@@ -20,4 +21,3 @@ export function removeEntry(key) {
       AsyncStorage.setItem(CALENDAR_STORAGE_KEY, JSON.stringify(data))
     })
 }
-

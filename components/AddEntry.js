@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, TouchableOpacity, Text, Platform, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, Text, StyleSheet, Platform } from 'react-native'
 import {
   getMetricMetaInfo,
   timeToString,
@@ -9,22 +9,23 @@ import UdaciSlider from './UdaciSlider'
 import UdaciSteppers from './UdaciSteppers'
 import DateHeader from './DateHeader'
 import { Ionicons } from '@expo/vector-icons'
-import { purple, white } from '../utils/colors'
 import TextButton from './TextButton'
 import { submitEntry, removeEntry } from '../utils/api'
-// redux
 import { connect } from 'react-redux'
 import { addEntry } from '../actions'
+import { purple, white } from '../utils/colors'
+import { NavigationActions } from 'react-navigation'
 
-const SubmitButton = ({ onPress }) => (
-  <TouchableOpacity
-    onPress={onPress}
-    style={Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.AndroidSubmitBtn}
-  >
-    <Text style={styles.submitBtnText}>SUBMIT</Text>
-  </TouchableOpacity>
-)
-
+function SubmitBtn({ onPress }) {
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={Platform.OS === 'ios' ? styles.iosSubmitBtn : styles.AndroidSubmitBtn}
+    >
+      <Text style={styles.submitBtnText}>SUBMIT</Text>
+    </TouchableOpacity>
+  )
+}
 class AddEntry extends Component {
   state = {
     run: 0,
@@ -60,44 +61,41 @@ class AddEntry extends Component {
       [metric]: value,
     }))
   }
-  submit = (event) => {
-    event.preventDefault()
+  submit = () => {
     const key = timeToString()
     const entry = this.state
-    // console.log(entry)
-    // Update Redux
+
     this.props.dispatch(addEntry({
       [key]: entry,
     }))
 
     this.setState(() => ({
-      run: 0,
-      bike: 0,
-      swim: 0,
-      sleep: 0,
-      eat: 0,
+      run: 0, bike: 0, swim: 0, sleep: 0, eat: 0,
     }))
 
-    // Navigation to home
+    this.toHome()
 
-    // Save to 'DB'
     submitEntry({ key, entry })
+
     // Clear local notification
   }
   reset = () => {
     const key = timeToString()
-    // Update Redux
+
     this.props.dispatch(addEntry({
       [key]: getDailyReminderValue(),
     }))
 
-    // Route to Home
-    // Update "DB"
+    this.toHome()
 
     removeEntry(key)
   }
+  toHome = () => {
+    this.props.navigation.dispatch(NavigationActions.back({ key: 'AddEntry' }))
+  }
   render() {
     const metaInfo = getMetricMetaInfo()
+
     if (this.props.alreadyLogged) {
       return (
         <View style={styles.center}>
@@ -112,43 +110,38 @@ class AddEntry extends Component {
         </View>
       )
     }
+
     return (
       <View style={styles.container}>
         <DateHeader date={(new Date()).toLocaleDateString()} />
-
-        <Text>
-          {/* {JSON.stringify(this.state)} */}
-        </Text>
-
         {Object.keys(metaInfo).map((key) => {
-        const { getIcon, type, ...rest } = metaInfo[key]
-        const value = this.state[key]
-        return (
-          <View key={key} style={styles.row}>
-            {getIcon()}
-            { type === 'slider'
-            ? <UdaciSlider
-              onChange={value => this.slide(key, value)}
-              value={value}
-              {...rest}
-            />
-            : <UdaciSteppers
-              onDecrement={() => this.decrement(key)}
-              onIncrement={() => this.increment(key)}
-              value={value}
-              {...rest}
-            />
-            }
-          </View>
+          const { getIcon, type, ...rest } = metaInfo[key]
+          const value = this.state[key]
+
+          return (
+            <View key={key} style={styles.row}>
+              {getIcon()}
+              {type === 'slider'
+                ? <UdaciSlider
+                  onChange={value => this.slide(key, value)}
+                  value={value}
+                  {...rest}
+                />
+                : <UdaciSteppers
+                  onDecrement={() => this.decrement(key)}
+                  onIncrement={() => this.increment(key)}
+                  value={value}
+                  {...rest}
+                />}
+            </View>
           )
         })}
-
-        <SubmitButton onPress={this.submit} />
-
+        <SubmitBtn onPress={this.submit} />
       </View>
     )
   }
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -192,11 +185,13 @@ const styles = StyleSheet.create({
     marginRight: 30,
   },
 })
+
 function mapStateToProps(state) {
   const key = timeToString()
-  // console.log(state)
+
   return {
     alreadyLogged: state[key] && typeof state[key].today === 'undefined',
   }
 }
+
 export default connect(mapStateToProps)(AddEntry)
